@@ -1,4 +1,10 @@
 <div class="landing-page">
+  <div class="landing-page__nav-bar">
+    <div class="landing-page__nav-bar__home">Gabriel Rochon</div>
+    <div class="landing-page__nav-bar__labels">
+      <div *ngFor="let label of labels" class="landing-page__nav-bar__labels__label"> {{ label }} </div>
+    </div>
+  </div>
   <img class="landing-page__background-image" src="../../../assets/page-backgrounds/landing-page-bg.jpg">
   <div class="landing-page__hero-title">
     <img *ngIf="!isTablet()" class="landing-page__hero-title__image" src="../../../assets/landing-page/HeroTitleDesktop.png">

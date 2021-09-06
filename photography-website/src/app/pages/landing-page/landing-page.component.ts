@@ -10,6 +10,7 @@ export class LandingPageComponent {
 
   tabletBreakpoint = 1200;
   innerWidth = 0;
+  labels = ["Bio", "Gallery", "Fares"]
 
   @HostListener('window:resize', ['$event'])
   onResize() {

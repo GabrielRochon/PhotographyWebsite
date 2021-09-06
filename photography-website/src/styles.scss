@@ -1,4 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 * {
   margin: 0;
+  font-family: 'sora';
+}
+
+
+// Media breakpoints
+@mixin mobile {
+  @media (max-width: 767px) {
+      @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1199px) {
+      @content;
+  }
+}
+
+@mixin desktop {
+    @content;
+}
+
+
+// Font families
+// https://fonts.google.com/specimen/Sora
+// Light = 300, Regular = 400, Semi-bold = 600, Bold = 700
+@font-face {
+  font-family: sora;
+  src: url("../src/assets/fonts/Sora-VariableFont_wght.ttf");
 }
