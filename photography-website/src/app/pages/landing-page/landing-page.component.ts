@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 
 @Component({
@@ -6,7 +6,7 @@ import { Component, HostListener } from '@angular/core';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent {
+export class LandingPageComponent implements OnInit {
 
   tabletBreakpoint = 768;
   mobileBreakpoint = 480;
@@ -15,6 +15,10 @@ export class LandingPageComponent {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
+    this.innerWidth = window.innerWidth;
+  }
+
+  ngOnInit(): void {
     this.innerWidth = window.innerWidth;
   }
 
