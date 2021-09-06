@@ -1,6 +1,7 @@
 <div class="landing-page">
   <img class="landing-page__background-image" src="../../../assets/page-backgrounds/landing-page-bg.jpg">
   <div class="landing-page__hero-title">
-    <img class="landing-page__hero-title__image" src="../../../assets/landing-page/HeroTitleDesktop.png">
+    <img *ngIf="!isTablet()" class="landing-page__hero-title__image" src="../../../assets/landing-page/HeroTitleDesktop.png">
+    <img *ngIf="isTablet()" class="landing-page__hero-title__image" src="../../../assets/landing-page/HeroTitleMobile.png">
   </div>
 </div>
