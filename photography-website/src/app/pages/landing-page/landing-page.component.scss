@@ -76,4 +76,24 @@
       }
     }
   }
+
+  &__arrow-down {
+    width: 100vw;
+    height: fit-content;
+    position: fixed;
+    bottom: 0;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+
+    &__image {
+      width: 45px;
+      height: 45px;
+
+      @include mobile {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
 }
