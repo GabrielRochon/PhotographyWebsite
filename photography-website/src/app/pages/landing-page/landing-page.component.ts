@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { MediaQueriesService } from 'src/services/media-queries/media-queries.service';
 
 
 @Component({
@@ -6,31 +7,21 @@ import { Component, HostListener, OnInit } from '@angular/core';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent {
 
-  tabletBreakpoint = 768;
-  mobileBreakpoint = 480;
-  innerWidth = 0;
-  labels = ["Bio", "Gallery", "Fares"]
+  labels = ["Bio", "Gallery", "Fares"]; // TODO: Move somewhere else
+  isMobile = false;
+  isTablet = false;
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    this.innerWidth = window.innerWidth;
+    this.updateMediaQueriesBooleans();
   }
 
-  ngOnInit(): void {
-    this.innerWidth = window.innerWidth;
-  }
+  constructor(private mediaQueriesService: MediaQueriesService) {}
 
-  isMobile() {
-    return this.getWindowWidth() < this.mobileBreakpoint;
-  }
-
-  isTablet(): boolean {
-    return this.getWindowWidth() < this.tabletBreakpoint;
-  }
-
-  getWindowWidth(): number {
-    return this.innerWidth;
+  updateMediaQueriesBooleans(): void {
+    this.isMobile = this.mediaQueriesService.isMobile(window.innerWidth);
+    this.isTablet = this.mediaQueriesService.isTablet(window.innerWidth);
   }
 }

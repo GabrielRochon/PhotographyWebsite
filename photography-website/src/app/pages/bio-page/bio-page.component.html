@@ -1,1 +1,11 @@
-<p>bio-page works!</p>
+<div class="bio-page">
+  <img class="bio-page__background-image" src="../../../assets/bio-page/Background.jpg">
+  <div class="bio-page__title">
+    <div *ngIf="!isTablet; else elseTablet" class="bio-page__title">
+      <img class="bio-page__title__image" src="../../../assets/bio-page/TitleDesktop.svg">
+    </div>
+    <ng-template #elseTablet class="bio-page__title">
+      <img class="bio-page__title__image" src="../../../assets/bio-page/TitleMobile.svg">
+    </ng-template>
+  </div>
+</div>

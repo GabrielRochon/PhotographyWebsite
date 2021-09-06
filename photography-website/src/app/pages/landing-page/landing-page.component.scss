@@ -9,7 +9,6 @@
 
   &__nav-bar {
     position: absolute;
-    position: fixed;
     width: calc(100vw - 60px);
     height: 30px;
     z-index: 9999;
@@ -85,7 +84,7 @@
   &__arrow-down {
     width: 100vw;
     height: fit-content;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     margin: 20px auto;
     display: flex;

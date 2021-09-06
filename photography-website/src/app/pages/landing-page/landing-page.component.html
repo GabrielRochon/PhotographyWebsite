@@ -3,7 +3,7 @@
   <div class="landing-page__nav-bar">
     <div class="landing-page__nav-bar__home">Gabriel Rochon</div>
     <div class="landing-page__nav-bar__labels">
-      <div *ngIf="!isMobile(); else elseMobile">
+      <div *ngIf="!isMobile; else elseMobile">
         <div *ngFor="let label of labels" class="landing-page__nav-bar__labels__label"> {{ label }} </div>
       </div>
       <ng-template #elseMobile>
@@ -15,7 +15,7 @@
   <!-- Hero cover-->
   <img class="landing-page__background-image" src="../../../assets/landing-page/Background.jpg">
   <div class="landing-page__hero-title">
-    <div *ngIf="!isTablet(); else elseTablet">
+    <div *ngIf="!isTablet; else elseTablet">
       <img  class="landing-page__hero-title__image" src="../../../assets/landing-page/HeroTitleDesktop.svg">
     </div>
     <ng-template #elseTablet>
