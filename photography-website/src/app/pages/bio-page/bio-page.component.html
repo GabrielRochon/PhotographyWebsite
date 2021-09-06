@@ -1,11 +1,17 @@
 <div class="bio-page">
   <img class="bio-page__background-image" src="../../../assets/bio-page/Background.jpg">
+  <!-- Title -->
   <div class="bio-page__title">
-    <div *ngIf="!isTablet; else elseTablet" class="bio-page__title">
-      <img class="bio-page__title__image" src="../../../assets/bio-page/TitleDesktop.svg">
+    <div *ngIf="!isMobile; else elseTablet" class="bio-page__title__wrapper">
+      <img class="bio-page__title__wrapper__image" src="../../../assets/bio-page/TitleDesktop.svg">
     </div>
-    <ng-template #elseTablet class="bio-page__title">
-      <img class="bio-page__title__image" src="../../../assets/bio-page/TitleMobile.svg">
+    <ng-template #elseTablet class="bio-page__title__wrapper">
+      <img class="bio-page__title__wrapper__image" src="../../../assets/bio-page/TitleMobile.svg">
     </ng-template>
+  </div>
+
+  <!-- Gab's picture -->
+  <div class="bio-page__picture">
+    <img src="bio-page__picture__image" src="../../../assets/bio-page/GabPictureDesktop.png">
   </div>
 </div>

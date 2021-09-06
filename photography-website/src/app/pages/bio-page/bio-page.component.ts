@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MediaQueriesService } from 'src/services/media-queries/media-queries.service';
 
 @Component({
@@ -6,9 +6,9 @@ import { MediaQueriesService } from 'src/services/media-queries/media-queries.se
   templateUrl: './bio-page.component.html',
   styleUrls: ['./bio-page.component.scss']
 })
-export class BioPageComponent {
+export class BioPageComponent implements OnInit {
 
-  isTablet = false;
+  isMobile = false;
 
   @HostListener('window:resize', ['$event'])
   onResize() {
@@ -17,7 +17,11 @@ export class BioPageComponent {
 
   constructor(private mediaQueriesService: MediaQueriesService) {}
 
+  ngOnInit(): void {
+    this.updateMediaQueriesBooleans();
+  }
+
   updateMediaQueriesBooleans(): void {
-    this.isTablet = this.mediaQueriesService.isTablet(window.innerWidth);
+    this.isMobile = this.mediaQueriesService.isMobile(window.innerWidth);
   }
 }
