@@ -8,13 +8,18 @@ import { Component, HostListener } from '@angular/core';
 })
 export class LandingPageComponent {
 
-  tabletBreakpoint = 1200;
+  tabletBreakpoint = 768;
+  mobileBreakpoint = 480;
   innerWidth = 0;
   labels = ["Bio", "Gallery", "Fares"]
 
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.innerWidth = window.innerWidth;
+  }
+
+  isMobile() {
+    return this.getWindowWidth() < this.mobileBreakpoint;
   }
 
   isTablet(): boolean {

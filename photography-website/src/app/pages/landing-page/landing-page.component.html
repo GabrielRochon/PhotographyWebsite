@@ -1,14 +1,26 @@
 <div class="landing-page">
+  <!-- Navbar -->
   <div class="landing-page__nav-bar">
     <div class="landing-page__nav-bar__home">Gabriel Rochon</div>
     <div class="landing-page__nav-bar__labels">
-      <div *ngFor="let label of labels" class="landing-page__nav-bar__labels__label"> {{ label }} </div>
+      <div *ngIf="!isMobile(); else elseMobile">
+        <div *ngFor="let label of labels" class="landing-page__nav-bar__labels__label"> {{ label }} </div>
+      </div>
+      <ng-template #elseMobile>
+        <img class="landing-page__nav-bar__labels__hamburger-icon" src="../../../assets/landing-page/HamburgerIcon.svg">
+      </ng-template>
     </div>
   </div>
+
+  <!-- Hero cover-->
   <img class="landing-page__background-image" src="../../../assets/page-backgrounds/landing-page-bg.jpg">
   <div class="landing-page__hero-title">
-    <img *ngIf="!isTablet()" class="landing-page__hero-title__image" src="../../../assets/landing-page/HeroTitleDesktop.svg">
-    <img *ngIf="isTablet()" class="landing-page__hero-title__image" src="../../../assets/landing-page/HeroTitleMobile.svg">
+    <div *ngIf="!isTablet(); else elseTablet">
+      <img  class="landing-page__hero-title__image" src="../../../assets/landing-page/HeroTitleDesktop.svg">
+    </div>
+    <ng-template #elseTablet>
+      <img class="landing-page__hero-title__image" src="../../../assets/landing-page/HeroTitleMobile.svg">
+    </ng-template>
   </div>
   <div class="landing-page__arrow-down">
     <img class="landing-page__arrow-down__image" src="../../../assets/landing-page/ArrowDown.svg">

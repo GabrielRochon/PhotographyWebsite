@@ -17,7 +17,7 @@
     margin: 30px;
 
     &__home {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 600;
       width: auto;
       display: inline-block;
@@ -36,6 +36,11 @@
         padding-left: 30px;
         transform: translateY(4px);
         text-shadow: 0px 4px 4px rgba(black, 0.25);
+      }
+
+      &__hamburger-icon {
+        width: 26px;
+        height: 26px;
       }
     }
   }
