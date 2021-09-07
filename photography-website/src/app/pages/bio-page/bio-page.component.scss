@@ -61,24 +61,21 @@
   }
 
   &__content {
-
     position: absolute;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 40vw;
     height: 80vh;
     z-index: 9999;
     bottom: 0;
     right: 0;
-    margin: 0 10vw;
-
+    margin: auto 10vw;
 
     &__text {
       position: relative;
       color: white;
       font-weight: 400;
-      margin: auto 0;
-
 
       &__title {
         font-size: 32px;
@@ -87,6 +84,7 @@
 
       &__description {
         font-size: 24px;
+        margin-bottom: 36px;
       }
     }
   }

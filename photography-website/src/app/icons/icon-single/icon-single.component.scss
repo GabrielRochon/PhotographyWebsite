@@ -10,8 +10,18 @@
   }
 
   &__label {
-    font-size: 14px;
-    color: white;
     text-align: center;
+
+    &__text {
+      font-size: 14px;
+      color: white;
+
+      // Show 2 lines max
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* number of lines to show */
+      -webkit-box-orient: vertical;
+    }
   }
 }
