@@ -1,0 +1,11 @@
+@import "../../styles.scss";
+
+.icons {
+  display: flex;
+  flex-direction: row;
+
+  &__icon {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+}
