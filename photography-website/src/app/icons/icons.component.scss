@@ -4,8 +4,16 @@
   display: flex;
   flex-direction: row;
 
+  @include tablet {
+    flex-wrap: wrap;
+  }
+
   &__icon {
     flex-grow: 1;
     flex-basis: 0;
+
+    @include tablet {
+      flex-basis: 50%;
+    }
   }
 }
